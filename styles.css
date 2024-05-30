@@ -1,0 +1,61 @@
+.c1 {
+    width: 18vw;
+    min-width: 300px;
+    margin-top: 15vh;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.c2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.c21 {
+    width: min-content;
+    display: flex;
+    flex-direction: row;
+}
+
+.navButtons {
+    width: 1.5vw;
+    height: 1.5vw;
+    min-width: 25px;
+    min-height: 25px;
+    padding: 5px;
+}
+
+table {
+    width: 100%;
+    border: 2px solid black;
+}
+
+h1, h2{
+    padding-left: 1%;
+}
+
+th, h1, h2{
+    font-family: "Kode Mono";
+}
+
+th{
+    font-size: 125%;
+}
+
+td {
+    font-family: "Kode Mono";
+    font-size: 125%;
+    border: 1px solid black;
+    text-align: center;
+    vertical-align: middle;
+    height: 1.5vw;
+}
+
+td.inactive {
+    color: gray;
+}
+
+td.currentDate {
+    background-color: red;
+}

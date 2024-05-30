@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Calendar</title>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kode+Mono">
+        <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+        <script src="script.js" defer></script>
+    </head>
+    <body>
+        <div class="c1">
+            <h1 class="yearHead"></h1>
+            <div class="c2">
+                <h2 class="monthHead"></h2>
+                <div class="c21">
+                    <input class="navButtons" type="image" onClick="prevMonth()" src="./upArrow.png">
+                    <input class="navButtons" type="image" onClick="nextMonth()" src="./downArrow.png">
+                </div>
+            </div>
+            <table class="calendarTable"></table>
+        </div>
+    </body>
+</html>
