@@ -2,8 +2,6 @@ const yearHead = document.querySelector(".yearHead"),
 monthHead = document.querySelector(".monthHead"),
 calendarTable = document.querySelector(".calendarTable");
 
-console.log($.getJSON("https://spreadsheets.google.com/tq?tq=select+A&key=1qKdLoNBo9yqMVFBVSd7MlzIAsnr5Tw4S1ZBUvwqCf4Y"))
-
 //Month Names
 var months = ["January", "February", "March", "April", "May", "June","July", "August", "September", "October", "November", "December"]
 
