@@ -20,7 +20,7 @@ const downloadURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRNFHwUFDBT
 
 fetch(encodeURIComponent(downloadURL))
       .then(response => response.text())
-      .then(data => {parseData(data)})
+      .then(data => console.log(data))
       .then(r => {genCalendar(currentYear, currentMonth)})
 
 
