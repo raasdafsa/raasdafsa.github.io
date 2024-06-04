@@ -15,24 +15,25 @@ currentDate = date.getDate();
 yearHead.textContent = currentYear;
 monthHead.textContent = months[currentMonth];
 
-/* const corsProxy = "https://corsproxy.io/?"
+const corsProxy = "https://corsproxy.io/?"
 const downloadURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRNFHwUFDBT5neMmTYplKr_Kodr_nQCCOwhO_EY7lrn9muOwpnC3IZq05V06iLgQiGCgHsVRBVMlJdc/pub?gid=0&single=true&output=csv"
 
-fetch(corsProxy + encodeURIComponent(downloadURL))
+fetch(encodeURIComponent(downloadURL))
       .then(response => response.text())
       .then(data => {parseData(data)})
       .then(r => {genCalendar(currentYear, currentMonth)})
- */
+
+
 function parseData(data){
     for (var i in data){
         console.log(data[i]);
     }
 }
-
+/* 
 fetch("dataSheet.csv")
     .then(response => response.text())
     .then(data => {parseData(data)})
-    .then(r => {genCalendar(currentYear, currentMonth)})
+    .then(r => {genCalendar(currentYear, currentMonth)}) */
 
 //year and month both in int
 function genCalendar(year, month){
