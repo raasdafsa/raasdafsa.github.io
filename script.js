@@ -2,6 +2,14 @@ const yearHead = document.querySelector(".yearHead"),
 monthHead = document.querySelector(".monthHead"),
 calendarTable = document.querySelector(".calendarTable");
 
+
+
+const downloadURL = "https://corsproxy.io/?https://docs.google.com/spreadsheets/d/e/2PACX-1vRNFHwUFDBT5neMmTYplKr_Kodr_nQCCOwhO_EY7lrn9muOwpnC3IZq05V06iLgQiGCgHsVRBVMlJdc/pub?gid=0&single=true&output=csv"
+
+fetch(downloadURL)
+      .then(response => response.text())
+      .then(json => console.log(json))
+
 //Month Names
 var months = ["January", "February", "March", "April", "May", "June","July", "August", "September", "October", "November", "December"]
 
