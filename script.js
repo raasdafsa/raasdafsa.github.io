@@ -46,7 +46,7 @@ fetch(downloadURLtest)
       .then(response => response.text())
       .then(text => data = text)
       .then(r => {genCalendar(currentYear, currentMonth)})
-
+      .then(console.log(data))
 
 //year and month both in int
 
