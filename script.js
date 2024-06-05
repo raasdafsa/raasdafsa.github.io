@@ -16,7 +16,7 @@ yearHead.textContent = currentYear;
 monthHead.textContent = months[currentMonth];
 
 ////            TEST
-
+/* 
 let inputfortesting = document.querySelector(".fortesting")
 inputfortesting.addEventListener('change', () => {
     let files = inputfortesting.files;
@@ -37,26 +37,19 @@ inputfortesting.addEventListener('change', () => {
     genCalendar(currentYear, currentMonth)
 
 })
-
+ */
 ////            TEST
 
-
-
-//const downloadURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRNFHwUFDBT5neMmTYplKr_Kodr_nQCCOwhO_EY7lrn9muOwpnC3IZq05V06iLgQiGCgHsVRBVMlJdc/pub?gid=0&single=true&output=csv"
-const downloadURLtest = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTB7U1CC8g539_VPIU7IalCUeI7i2fXb0Gx8LQwbM3DhvkQHStXDC1YNTNC3GFtwaDdoIGENHFXfcOk/pub?gid=1142383292&single=true&output=csv"
+var data
+const downloadURLtest = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSa6eNkpxWpyjaBUR2vbm4_LJVPJAXgu355xGULFpkpucVEcH13p9QEtSbG6Srg1foNTY8tvhdZhAW_/pub?gid=0&single=true&output=csv"
 fetch(downloadURLtest)
       .then(response => response.text())
-      .then(data => console.log(data))
+      .then(text => data = text)
       .then(r => {genCalendar(currentYear, currentMonth)})
 
 
-/* fetch("dataSheet.csv")
-    .then(response => response.text())
-    .then(data => {parseData(data)})
-    .then(r => {genCalendar(currentYear, currentMonth)})
- */
-
 //year and month both in int
+
 function genCalendar(year, month){
     var Day1 = new Date(year, month).getDay()
     calendarTable.innerHTML = "<tr><th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th></tr>"
