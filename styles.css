@@ -57,23 +57,24 @@ td.inactive {
 }
 
 td.currentDate {
-    font-weight: bold;
+    border-width: 3;
+    font-weight: 900;
 }
 
 td.lower{
-    background-color: #FFFF00;
+    background-color: #ffffb2;
 }
 
 td.low {
-    background-color: #FFCC00;
+    background-color: #fecc5c;
 }
 
 td.med {
-    background-color: #FF9900;
+    background-color: #fd8d3c;
 }
 
 td.high {
-    background-color: #FF3300;
+    background-color: #e31a1c;
 }
 
 td.ultra {
