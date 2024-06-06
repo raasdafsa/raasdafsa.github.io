@@ -27,7 +27,7 @@ fetch(downloadURLtest)
 function dataCounter(data){
     let dataArray = data.split("\r\n")
     dataArray.shift()
-    for (dRange of dataArray){
+    for (let dRange of dataArray){
         let dates = drange.split(","),
         sDate = new Date(dates[0]),
         eDate = new Date(dates[1])
