@@ -56,6 +56,7 @@ function dateCounter(dateArray){
             counts[date] = 1
         }
     }
+    console.log(counts)
     return(counts)
 }
 
@@ -71,6 +72,10 @@ function genCalendar(year, month, counts){
             var dateCount = (7 * row) + col - Day1 + 1;
             
             if (counts[new Date(year, month, dateCount)] > 2){
+                newCell.classList.add("thresh2")
+            }
+
+            if (counts[new Date(year, month, dateCount)] <= 2){
                 newCell.classList.add("thresh1")
             }
 
