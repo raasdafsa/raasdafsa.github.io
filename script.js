@@ -20,8 +20,9 @@ const downloadURLtest = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSa6eNk
 fetch(downloadURLtest)
       .then(response => response.text())
       .then(text => data = text)
-      .then(r => genCalendar(currentYear, currentMonth))
       .then(r => dataCounter(data))
+      .then(r => genCalendar(currentYear, currentMonth))
+
 
 //year and month both in int
 
