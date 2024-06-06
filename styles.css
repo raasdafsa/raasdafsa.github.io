@@ -61,19 +61,19 @@ td.currentDate {
 }
 
 td.lower{
-    background-color: rgb(230, 220, 112);
+    background-color: #FFFF00;
 }
 
 td.low {
-    background-color: yellow;
+    background-color: #FFCC00;
 }
 
 td.med {
-    background-color: orange;
+    background-color: #FF9900;
 }
 
 td.high {
-    background-color: red;
+    background-color: #FF3300;
 }
 
 td.ultra {
