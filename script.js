@@ -38,8 +38,9 @@ function dataCounter(data){
         }
         else if (eDate > sDate){
             while (sDate <= eDate){
+                let pushthis = sDate
                 console.log(sDate)
-                expandedDates.push(sDate)
+                expandedDates.push(pushthis)
                 sDate.setDate(sDate.getDate()+1)
             }
         }
