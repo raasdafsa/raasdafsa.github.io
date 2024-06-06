@@ -1,6 +1,7 @@
 .c1 {
     background-color: #c0c0c0;
     padding:20px;
+    padding-top:0;
     border-style: solid;
     border-right-width: 3;
     border-bottom-width: 3;
@@ -12,7 +13,14 @@
 }
 
 .titleBar{
-    background-color:red;
+    background-color:#020084;
+    color:white;
+    font-family: "Arial";
+    font-weight:bold;
+    padding:5;
+    margin-left:-18px;
+    margin-right:-18px;
+    margin-top:2px;
 }
 
 .c2 {
