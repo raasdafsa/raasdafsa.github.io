@@ -16,7 +16,7 @@ yearHead.textContent = currentYear;
 monthHead.textContent = months[currentMonth];
 
 var countsDict
-const downloadURLtest = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSa6eNkpxWpyjaBUR2vbm4_LJVPJAXgu355xGULFpkpucVEcH13p9QEtSbG6Srg1foNTY8tvhdZhAW_/pub?gid=0&single=true&output=csv"
+const downloadURLtest = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRNFHwUFDBT5neMmTYplKr_Kodr_nQCCOwhO_EY7lrn9muOwpnC3IZq05V06iLgQiGCgHsVRBVMlJdc/pub?gid=1605142282&single=true&output=csv"
 fetch(downloadURLtest)
       .then(response => response.text())
       .then(text => expandDates(text))
@@ -70,12 +70,22 @@ function genCalendar(year, month, counts){
             var newCell = document.createElement("td");
             var dateCount = (7 * row) + col - Day1 + 1;
             
-            if (counts[new Date(year, month, dateCount)] > 2){
-                newCell.classList.add("thresh2")
+            if (counts[new Date(year, month, dateCount)] <= 2){
+                newCell.classList.add("low")
             }
 
-            if (counts[new Date(year, month, dateCount)] <= 2){
-                newCell.classList.add("thresh1")
+            if (counts[new Date(year, month, dateCount)] <= 4 &&
+            counts[new Date(year, month, dateCount)] > 2){
+                newCell.classList.add("med")
+            }
+
+            if (counts[new Date(year, month, dateCount)] <= 6 &&
+            counts[new Date(year, month, dateCount)] > 4){
+                newCell.classList.add("high")
+            }
+
+            if (counts[new Date(year, month, dateCount)] > 6){
+                newCell.classList.add("ultra")
             }
 
             if (year == currentYear &&

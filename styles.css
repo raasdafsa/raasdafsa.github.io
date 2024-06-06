@@ -57,13 +57,22 @@ td.inactive {
 }
 
 td.currentDate {
+    font-weight: bold;
+}
+
+td.low {
+    background-color: yellow;
+}
+
+td.med {
+    background-color: orange;
+}
+
+td.high {
     background-color: red;
 }
 
-td.thresh1 {
-    background-color: blueviolet;
-}
-
-td.thresh2 {
-    background-color: yellow;
+td.ultra {
+    color: white;
+    background-color: black;
 }
