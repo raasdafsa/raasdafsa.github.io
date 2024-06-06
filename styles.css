@@ -52,10 +52,6 @@ td {
     height: 1.5vw;
 }
 
-td.inactive {
-    color: gray;
-}
-
 td.currentDate {
     border-width: 3;
     font-weight: 900;
@@ -80,4 +76,10 @@ td.high {
 td.ultra {
     color: white;
     background-color: black;
+}
+
+td.inactive {
+    color: gray;
+    background-color: white;
+    border-width: 0;
 }
