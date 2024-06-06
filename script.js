@@ -70,7 +70,11 @@ function genCalendar(year, month, counts){
             var newCell = document.createElement("td");
             var dateCount = (7 * row) + col - Day1 + 1;
             
-            if (counts[new Date(year, month, dateCount)] <= 2){
+            if (counts[new Date(year, month, dateCount)] == 1){
+                newCell.classList.add("lower")
+            }
+
+            if (counts[new Date(year, month, dateCount)] == 2){
                 newCell.classList.add("low")
             }
 

@@ -60,8 +60,12 @@ td.currentDate {
     font-weight: bold;
 }
 
+td.lower{
+    background-color: rgb(230, 220, 112);
+}
+
 td.low {
-    background-color: palegoldenrod;
+    background-color: yellow;
 }
 
 td.med {
