@@ -15,12 +15,11 @@ currentDate = date.getDate();
 yearHead.textContent = currentYear;
 monthHead.textContent = months[currentMonth];
 
-var data
+var countsDict
 const downloadURLtest = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSa6eNkpxWpyjaBUR2vbm4_LJVPJAXgu355xGULFpkpucVEcH13p9QEtSbG6Srg1foNTY8tvhdZhAW_/pub?gid=0&single=true&output=csv"
 fetch(downloadURLtest)
       .then(response => response.text())
-      .then(text => data = text)
-      .then(res => expandDates(data))
+      .then(text => expandDates(text))
       .then(res => dateCounter(res))
       .then(res => genCalendar(currentYear, currentMonth, res))
 
@@ -56,7 +55,7 @@ function dateCounter(dateArray){
             counts[date] = 1
         }
     }
-    console.log(counts)
+    countsDict = counts
     return(counts)
 }
 
@@ -127,7 +126,7 @@ function prevMonth() {
         monthIndex--;
         monthHead.textContent = months[monthIndex];
     } 
-    genCalendar(yearHead.textContent, monthIndex);
+    genCalendar(yearHead.textContent, monthIndex, countsDict);
 }
 
 function nextMonth() {
@@ -141,5 +140,5 @@ function nextMonth() {
         monthIndex++;
         monthHead.textContent = months[monthIndex];
     }
-    genCalendar(yearHead.textContent, monthIndex);
+    genCalendar(yearHead.textContent, monthIndex, countsDict);
 }
