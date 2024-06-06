@@ -21,13 +21,14 @@ fetch(downloadURLtest)
       .then(response => response.text())
       .then(text => data = text)
       .then(r => {genCalendar(currentYear, currentMonth)})
+      .then(r => dataCounter(data))
 
 //year and month both in int
 
 function dataCounter(data){
     let dataArray = data.split("\r\n")
     dataArray.shift()
-    for (let dRange of dataArray){
+    for (dRange of dataArray){
         let dates = drange.split(","),
         sDate = new Date(dates[0]),
         eDate = new Date(dates[1])
