@@ -11,6 +11,10 @@
     margin-right: auto;
 }
 
+.titleBar{
+    background-color:red;
+}
+
 .c2 {
     display: flex;
     justify-content: space-between;
@@ -32,6 +36,7 @@
 }
 
 table {
+    background-color: white;
     width: 100%;
     border: 2px solid black;
 }
