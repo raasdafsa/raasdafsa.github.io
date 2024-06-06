@@ -1,4 +1,9 @@
 .c1 {
+    background-color: #c0c0c0;
+    padding:20px;
+    border-style: solid;
+    border-right-width: 3;
+    border-bottom-width: 3;
     width: 18vw;
     min-width: 300px;
     margin-top: 15vh;
