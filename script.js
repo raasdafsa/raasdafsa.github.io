@@ -37,12 +37,12 @@ function dataCounter(data){
             expandedDates.push(sDate)
         }
         else if (eDate > sDate){
-            for (let d1 = sDate; d1 <= eDate; d1.setDate(d1.getDate()+1)){
+            for (let d1 = sDate; d1 <= eDate; d1.setDate(sDate.getDate()+1)){
                 expandedDates.push(d1)
             }
         }
-    console.log(expandedDates)
     }
+    console.log(expandedDates)
 }
 
 function genCalendar(year, month){
