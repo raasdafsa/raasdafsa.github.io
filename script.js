@@ -36,6 +36,13 @@ function dataCounter(data){
         if (sDate.getTime() == eDate.getTime()){
             expandedDates.push(sDate)
         }
+        else if (eDate > sDate){
+            while (sDate <= eDate){
+                console.log(sDate)
+                expandedDates.push(sDate)
+                sDate.setDate(sDate.getDate()+1)
+            }
+        }
     }
     console.log(expandedDates)
 }
