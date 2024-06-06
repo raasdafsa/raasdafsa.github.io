@@ -15,40 +15,28 @@ currentDate = date.getDate();
 yearHead.textContent = currentYear;
 monthHead.textContent = months[currentMonth];
 
-////            TEST
-/* 
-let inputfortesting = document.querySelector(".fortesting")
-inputfortesting.addEventListener('change', () => {
-    let files = inputfortesting.files;
-
-    const file = files[0];
-
-    let reader = new FileReader();
-
-    reader.onload = (e) => {
-        const file = e.target.result;
-        const lines = file.split("\r\n");
-        for (line of lines){
-            console.log(line.split(/[\" ]/))
-        }
-    }
-
-    reader.readAsText(file);
-    genCalendar(currentYear, currentMonth)
-
-})
- */
-////            TEST
-
 var data
 const downloadURLtest = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSa6eNkpxWpyjaBUR2vbm4_LJVPJAXgu355xGULFpkpucVEcH13p9QEtSbG6Srg1foNTY8tvhdZhAW_/pub?gid=0&single=true&output=csv"
 fetch(downloadURLtest)
       .then(response => response.text())
       .then(text => data = text)
       .then(r => {genCalendar(currentYear, currentMonth)})
-      .then(console.log(data))
 
 //year and month both in int
+
+function dataCounter(data){
+    let dataArray = data.split("\r\n")
+    dataArray.shift()
+    for (dRange of dataArray){
+        let dates = drange.split(","),
+        sDate = new Date(dates[0]),
+        eDate = new Date(dates[1])
+
+        if (sDate < date){
+            console.log(sDate)
+        }
+    }
+}
 
 function genCalendar(year, month){
     var Day1 = new Date(year, month).getDay()
