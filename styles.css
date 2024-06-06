@@ -59,3 +59,7 @@ td.inactive {
 td.currentDate {
     background-color: red;
 }
+
+td.thresh1 {
+    background-color: blueviolet;
+}

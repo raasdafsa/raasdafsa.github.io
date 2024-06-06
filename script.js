@@ -22,7 +22,7 @@ fetch(downloadURLtest)
       .then(text => data = text)
       .then(res => expandDates(data))
       .then(res => dateCounter(res))
-      .then(res => genCalendar(currentYear, currentMonth))
+      .then(res => genCalendar(currentYear, currentMonth, res))
 
 
 function expandDates(data){
@@ -43,7 +43,6 @@ function expandDates(data){
             }
         }
     }
-    console.log(expandedDates)
     return expandedDates
 }
 
@@ -57,12 +56,12 @@ function dateCounter(dateArray){
             counts[date] = 1
         }
     }
-    console.log(counts)
+    return(counts)
 }
 
 
 //year and month both in int
-function genCalendar(year, month){
+function genCalendar(year, month, counts){
     var Day1 = new Date(year, month).getDay()
     calendarTable.innerHTML = "<tr><th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th></tr>"
     for (let row = 0; row < 6; row++){
@@ -70,6 +69,10 @@ function genCalendar(year, month){
         for (let col = 0; col < 7; col++){
             var newCell = document.createElement("td");
             var dateCount = (7 * row) + col - Day1 + 1;
+            
+            if (counts[new Date(year, month, dateCount)] > 2){
+                newCell.classList.add("thresh1")
+            }
 
             if (year == currentYear &&
                 month == currentMonth &&
