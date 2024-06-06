@@ -43,6 +43,7 @@ function expandDates(data){
             }
         }
     }
+    console.log(expandedDates)
     return expandedDates
 }
 
