@@ -21,6 +21,7 @@ fetch(downloadURLtest)
       .then(response => response.text())
       .then(text => data = text)
       .then(res => expandDates(data))
+      .then(res => dateCounter(res))
       .then(res => genCalendar(currentYear, currentMonth))
 
 
