@@ -20,14 +20,15 @@ const downloadURLtest = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSa6eNk
 fetch(downloadURLtest)
       .then(response => response.text())
       .then(text => data = text)
-      .then(genCalendar(currentYear, currentMonth))
-      .then(dataCounter(data))
+      .then(r => genCalendar(currentYear, currentMonth))
+      .then(r => dataCounter(data))
 
 //year and month both in int
 
 function dataCounter(data){
     let dataArray = data.split("\r\n")
     dataArray.shift()
+    var expandedDates = []
     for (dRange of dataArray){
         let dates = dRange.split(","),
         sDate = new Date(dates[0]),
