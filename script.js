@@ -20,13 +20,11 @@ const downloadURLtest = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSa6eNk
 fetch(downloadURLtest)
       .then(response => response.text())
       .then(text => data = text)
-      .then(r => dataCounter(data))
-      .then(r => genCalendar(currentYear, currentMonth))
+      .then(res => expandDates(data))
+      .then(res => genCalendar(currentYear, currentMonth))
 
 
-//year and month both in int
-
-function dataCounter(data){
+function expandDates(data){
     let dataArray = data.split("\r\n")
     dataArray.shift()
     var expandedDates = []
@@ -39,15 +37,29 @@ function dataCounter(data){
         }
         else if (eDate > sDate){
             while (sDate <= eDate){
-                console.log(sDate)
                 expandedDates.push(new Date(sDate))
-                sDate.setDate(sDate.getDate()+1)
+                sDate.setDate(sDate.getDate() + 1)
             }
         }
     }
-    console.log(expandedDates)
+    return expandedDates
 }
 
+function dateCounter(dateArray){
+    let counts = {}
+    for (let date of dateArray){
+        if (counts[date]){
+            counts[date] += 1
+        }
+        else {
+            counts[date] = 1
+        }
+    }
+    console.log(counts)
+}
+
+
+//year and month both in int
 function genCalendar(year, month){
     var Day1 = new Date(year, month).getDay()
     calendarTable.innerHTML = "<tr><th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th></tr>"
