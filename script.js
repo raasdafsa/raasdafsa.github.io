@@ -33,6 +33,15 @@ function dataCounter(data){
         let dates = dRange.split(","),
         sDate = new Date(dates[0]),
         eDate = new Date(dates[1])
+        if (sDate == eDate){
+            expandedDates.push(sDate)
+        }
+        else if (eDate > sDate){
+            for (let d1 = sDate; d1 <= eDate; d1.setDate(d1.getDate()+1)){
+                expandedDates.push(d1)
+            }
+        }
+    console.log(expandedDates)
     }
 }
 
